@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
+var saveLicense = require('uglify-save-license');
 
 module.exports = {
   entry: './src/index',
@@ -18,6 +19,10 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 warnings: false
+            },
+            
+            output: {
+                comments: saveLicense
             }
         }),
         new webpack.DefinePlugin({
