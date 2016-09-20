@@ -9,6 +9,7 @@
     "clean": "trash ./public/**/*build*",
     "lint": "eslint src"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/AndrewGibson27/react-webpack-single-page-app"
