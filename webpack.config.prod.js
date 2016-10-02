@@ -19,11 +19,6 @@ module.exports = {
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.optimize\.css$/g,
             cssProcessor: require('cssnano'),
-            cssProcessorOptions: {
-                discardComments: {
-                    removeAll: true
-                }
-            },
             canPrint: true
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
