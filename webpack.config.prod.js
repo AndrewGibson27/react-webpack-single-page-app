@@ -56,6 +56,12 @@ module.exports = {
         },
         
         {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
+            exclude: path.join(__dirname, 'src')
+        },
+        
+        {
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader!sass-loader')
         },

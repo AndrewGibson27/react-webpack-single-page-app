@@ -51,6 +51,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
+    "normalize.css": "^5.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "webfontloader": "^1.6.24"
