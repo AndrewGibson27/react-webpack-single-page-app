@@ -1,36 +1,36 @@
 @import '../../reusable';
 
 .paragraph {
-    font-size: 28px;
-    font-family: Georgia, serif;
-    box-sizing: border-box; /* demonstrates Autoprefixer at work */
-    
-    @include breakpoint(desktop) {
-        font-size: 36px; /* demonstrates Sass at work */
-    }
+  font-size: 28px;
+  font-family: Georgia, serif;
+  box-sizing: border-box; /* demonstrates Autoprefixer at work */
+
+  @include breakpoint(desktop) {
+      font-size: 36px; /* demonstrates Sass at work */
+  }
 }
 
 .unmounted {
-    composes: paragraph;
-    background: yellow;
+  composes: paragraph;
+  background: yellow;
 }
 
 .mounted {
-    composes: paragraph;
-    background: pink;
+  composes: paragraph;
+  background: pink;
 }
 
 .font_example {
-    font-family: Georgia, serif;
-    margin-top: 50px;
-    
-    :global(.wf-active) & {
-        font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
-    }
+  font-family: Georgia, serif;
+  margin-top: 50px;
+  
+  :global(.wf-active) & {
+      font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+  }
 }
 
 .clearfix {
-    @include clearfix;
-    float: left;
-    margin-top: 50px;
+  @include clearfix;
+  float: left;
+  margin-top: 50px;
 }
