@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/index',
   
   output: {
-        path: path.join(__dirname, 'public'),
+        path: path.join(__dirname, 'dist'),
         filename: 'bundle-build.js?[hash]',
         publicPath: './'
   },

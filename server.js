@@ -6,7 +6,7 @@ var config = require('./webpack.config.dev');
 var app = express();
 var compiler = webpack(config);
 
-app.use(express.static('public'));
+app.use(express.static('dist'));
 
 app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
@@ -16,7 +16,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 app.listen(3000, 'localhost', function(err) {
