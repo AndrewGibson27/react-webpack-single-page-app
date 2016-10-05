@@ -1,5 +1,4 @@
 @import '../../mixins';
-@import '../../variables';
 
 .paragraph {
     font-size: 28px;
@@ -22,11 +21,11 @@
 }
 
 .font_example {
-    font-family: $serif;
+    font-family: Georgia, serif;
     margin-top: 50px;
     
     :global(.wf-active) & {
-        font-family: $droid;
+        font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
     }
 }
 
