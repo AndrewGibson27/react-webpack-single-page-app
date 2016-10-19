@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
+var pug = require('pug');
 
 var app = express();
 var compiler = webpack(config);
