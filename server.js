@@ -17,9 +17,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.get('/', function (req, res) {
-  res.render('index', {
-    content: 'hello world'
-  });
+  res.render('index', {});
 });
 
 app.listen(3000, 'localhost', function(err) {
