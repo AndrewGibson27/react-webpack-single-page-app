@@ -1,7 +1,7 @@
 {
-  "presets": ["react", "es2015"],
+  "presets": ["es2015", "react"],
   "env": {
-    "development": {
+    "webpack-dev": {
       "plugins": [
         ["react-transform", {
           "transforms": [{
@@ -12,6 +12,17 @@
             "transform": "react-transform-catch-errors",
             "imports": ["react", "redbox-react"]
           }]
+        }]
+      ]
+    },
+    "webpack-prod": {
+      "presets": ["es2015", "react"]
+    },
+    "extract": {
+      "presets": ["es2015", "react"],
+      "plugins": [
+        ["css-modules-transform", {
+          "extensions": [".css", ".scss"]
         }]
       ]
     }
