@@ -10,8 +10,7 @@
     "build": "BROWSERSLIST_CONFIG=./browserslist npm run destroy && npm run webpack && npm run extract && npm run gulp && npm run libs",
     "destroy": "trash ./dist/build && trash ./dist/index.html",
     "gulp": "gulp",
-    "libs": "gulp libs",
-    "lint": "eslint ./src"
+    "libs": "gulp libs"
   },
   "license": "MIT",
   "repository": {
@@ -35,9 +34,6 @@
     "critical": "^0.8.0",
     "css-loader": "^0.23.0",
     "cssnano": "^3.7.5",
-    "eslint": "^1.10.3",
-    "eslint-plugin-babel": "^3.0.0",
-    "eslint-plugin-react": "^3.11.3",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.9.1",
     "gulp": "^3.9.1",
