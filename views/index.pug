@@ -2,8 +2,11 @@ doctype html
 html
   head
     title React Webpack Single Page App
-    link(rel='stylesheet', type='text/css', href='build/app-build.css')
-    script(src='build/modernizr.js')
+    
+    if env != 'webpack-dev'
+      link(rel='stylesheet', type='text/css', href='build/app-build.css')
+      script(src='build/modernizr.js')
+  
   body
     #root!=content
   script(src='build/bundle-build.js')

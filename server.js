@@ -17,7 +17,9 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.get('/', function (req, res) {
-  res.render('index', {});
+  res.render('index', {
+    env: process.env.NODE_ENV || 'webpack-dev'
+  });
 });
 
 app.listen(3000, 'localhost', function(err) {
