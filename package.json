@@ -6,10 +6,11 @@
     "start": "node server.js",
     "dev": "npm run destroy && NODE_ENV=webpack-dev npm run start",
     "webpack": "NODE_ENV=webpack-prod webpack --config webpack.config.prod.js",
-    "gulp": "gulp",
     "extract": "NODE_ENV=extract babel-node build.js",
-    "build": "BROWSERSLIST_CONFIG=./browserslist npm run destroy && npm run webpack && npm run extract && npm run gulp",
+    "build": "BROWSERSLIST_CONFIG=./browserslist npm run destroy && npm run webpack && npm run extract && npm run gulp && npm run libs",
     "destroy": "trash ./dist/build && trash ./dist/index.html",
+    "gulp": "gulp",
+    "libs": "gulp libs",
     "lint": "eslint ./src"
   },
   "license": "MIT",

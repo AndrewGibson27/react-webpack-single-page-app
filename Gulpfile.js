@@ -16,10 +16,10 @@ gulp.task('modernizr', function() {
         comments: saveLicense
       }
     }))
-    .pipe(gulp.dest('./dist/build'))
+    .pipe(gulp.dest('./dist/libs'))
 });
 
-gulp.task('critical', function () {
+gulp.task('critical', function() {
   return gulp.src('dist/index.html')
     .pipe(critical({
       base: './',
@@ -31,4 +31,5 @@ gulp.task('critical', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['critical', 'modernizr']);
+gulp.task('default', ['critical']);
+gulp.task('libs', ['modernizr']);
