@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var saveLicense = require('uglify-save-license');
@@ -68,12 +68,12 @@ module.exports = {
     
       {
         test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: "url-loader?mimetype=application/font-woff&name=[name]-build.[ext]?[hash]"
+        loader: 'url-loader?mimetype=application/font-woff&name=[name]-build.[ext]?[hash]'
       },
     
       {
         test: /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: "file-loader?name=[name]-build.[ext]?[hash]"
+        loader: 'file-loader?name=[name]-build.[ext]?[hash]'
       },
     
       {

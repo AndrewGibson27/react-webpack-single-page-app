@@ -54,12 +54,12 @@ module.exports = {
       
       {
         test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: "url-loader?mimetype=application/font-woff"
+        loader: 'url-loader?mimetype=application/font-woff'
       },
       
       {
         test: /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: "file-loader"
+        loader: 'file-loader'
       },
       
       {
