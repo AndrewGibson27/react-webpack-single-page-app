@@ -16,19 +16,20 @@ gulp.task('modernizr', function() {
         comments: saveLicense
       }
     }))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/libs'))
 });
 
-gulp.task('critical', function () {
+gulp.task('critical', function() {
   return gulp.src('dist/index.html')
     .pipe(critical({
       base: './',
       inline: true,
       css: [
-        'dist/app-build.css'
+        'dist/build/app-build.css'
       ]
     }))
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['critical', 'modernizr']);
+gulp.task('default', ['critical']);
+gulp.task('libs', ['modernizr']);

@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var saveLicense = require('uglify-save-license');
@@ -9,77 +9,57 @@ module.exports = {
   entry: './src/index',
   
   output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle-build.js?[hash]',
-        publicPath: './'
+    path: path.join(__dirname, 'dist', 'build'),
+    filename: 'bundle-build.js?[hash]',
+    publicPath: './'
   },
   
   plugins: [
-        new ExtractTextPlugin('app-build.css?[hash]'),
-        new OptimizeCssAssetsPlugin({
-            assetNameRegExp: /\.optimize\.css$/g,
-            cssProcessor: require('cssnano'),
-            canPrint: true
-        }),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false
-            },
-            
-            output: {
-                comments: saveLicense
-            }
-        }),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
-        }),
-        new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery',
-          'root.jQuery': 'jquery'
-        })
+    new ExtractTextPlugin('app-build.css?[hash]'),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.optimize\.css$/g,
+      cssProcessor: require('cssnano'),
+      canPrint: true
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+          warnings: false
+      },
+    
+      output: {
+          comments: saveLicense
+      }
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'root.jQuery': 'jquery'
+    })
   ],
   
   module: {
     loaders: [
-        {
-            test: /\.js$/,
-            loaders: ['babel'],
-            include: path.join(__dirname, 'src')
-        },
-        
-        {
-            test: /\.json?$/,
-            loader: 'json-loader'
-        },
-        
-        {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
-            exclude: path.join(__dirname, 'src')
-        },
-        
-        {
-            test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]-[local]-[hash]!postcss-loader!sass-loader')
-        },
-        
-        {
-            test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/,
-            loader: "url-loader?mimetype=application/font-woff&name=[name]-build.[ext]?[hash]"
-        },
-        
-        {
-            test: /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/,
-            loader: "file-loader?name=[name]-build.[ext]?[hash]"
-        },
-        
-        {
-            test: /\.(png|jpg|gif)$/, 
-            loader: 'url-loader?name=[name]-build.[ext]?[hash]&limit=8192'
-        }
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src')
+      },
+    
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
+        exclude: path.join(__dirname, 'src')
+      },
+    
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]-[local]-[hash]!postcss-loader!sass-loader')
+      }
     ]
   },
   
