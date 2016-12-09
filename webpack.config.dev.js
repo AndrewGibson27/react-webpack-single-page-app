@@ -37,11 +37,6 @@ module.exports = {
       },
       
       {
-        test: /\.json?$/,
-        loader: 'json-loader'
-      },
-      
-      {
         test: /\.css$/,
         loader: 'style-loader!css-loader!postcss-loader',
         exclude: path.join(__dirname, 'src')
@@ -50,21 +45,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]-[local]-[hash]!postcss-loader!sass-loader'
-      },
-      
-      {
-        test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: 'url-loader?mimetype=application/font-woff'
-      },
-      
-      {
-        test: /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: 'file-loader'
-      },
-      
-      {
-        test: /\.(png|jpg|gif)$/, 
-        loader: 'url-loader?limit=8192'
+      }
       }
     ]
   },

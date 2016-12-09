@@ -51,11 +51,6 @@ module.exports = {
       },
     
       {
-        test: /\.json?$/,
-        loader: 'json-loader'
-      },
-    
-      {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
         exclude: path.join(__dirname, 'src')
@@ -64,21 +59,6 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]-[local]-[hash]!postcss-loader!sass-loader')
-      },
-    
-      {
-        test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: 'url-loader?mimetype=application/font-woff&name=[name]-build.[ext]?[hash]'
-      },
-    
-      {
-        test: /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/,
-        loader: 'file-loader?name=[name]-build.[ext]?[hash]'
-      },
-    
-      {
-        test: /\.(png|jpg|gif)$/, 
-        loader: 'url-loader?name=[name]-build.[ext]?[hash]&limit=8192'
       }
     ]
   },
