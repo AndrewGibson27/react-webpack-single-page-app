@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/index',
   
   output: {
-        path: path.join(__dirname, 'public'),
+        path: path.join(__dirname, 'dist'),
         filename: 'bundle-build.js?[hash]',
         publicPath: './'
   },
@@ -33,6 +33,12 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery',
+          'root.jQuery': 'jquery'
         })
   ],
   
@@ -50,8 +56,14 @@ module.exports = {
         },
         
         {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
+            exclude: path.join(__dirname, 'src')
+        },
+        
+        {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader!sass-loader')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]-[local]-[hash]!postcss-loader!sass-loader')
         },
         
         {
@@ -66,7 +78,7 @@ module.exports = {
         
         {
             test: /\.(png|jpg|gif)$/, 
-            loader: 'file-loader?name=[name]-build.[ext]?[hash]'
+            loader: 'url-loader?name=[name]-build.[ext]?[hash]&limit=8192'
         }
     ]
   },

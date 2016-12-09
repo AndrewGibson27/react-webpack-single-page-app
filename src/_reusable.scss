@@ -1,0 +1,82 @@
+/* http://chrisltd.com/blog/2013/05/retina-images-sass/ */
+@mixin background-image-retina($file, $type) {
+  background-image: url($file + '.' + $type);
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx){
+    & {
+      background-image: url($file + '@2x.' + $type);
+    }
+  }
+}
+
+/* http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+.visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+/* http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }  
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+/* http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+/* http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+/* http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/* https://responsivedesign.is/develop/getting-started-with-sass */
+@mixin breakpoint($which) {
+  @if $which == desktop {
+    @media (min-width: 1280px) { @content; }
+  }
+}
+
+/* http://blog.teamtreehouse.com/a-better-clearfix-with-sass */
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

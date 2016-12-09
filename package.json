@@ -4,10 +4,10 @@
   "description": "A combination of a few existing React/Webpack boilerplates to make cooking up single page apps easy.",
   "scripts": {
     "start": "node server.js",
-    "dev": "npm run clean && NODE_ENV=development npm run start",
-    "prod": "BROWSERSLIST_CONFIG=./browserslist npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js",
-    "clean": "trash ./public/**/*build*",
-    "lint": "eslint src"
+    "dev": "npm run destroy && NODE_ENV=development npm run start",
+    "build": "BROWSERSLIST_CONFIG=./browserslist npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js && gulp",
+    "destroy": "trash ./dist/*",
+    "lint": "eslint ./src"
   },
   "license": "MIT",
   "repository": {
@@ -26,6 +26,7 @@
     "babel-plugin-react-transform": "^2.0.0-beta1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "critical": "^0.8.0",
     "css-loader": "^0.23.0",
     "cssnano": "^3.7.5",
     "eslint": "^1.10.3",
@@ -34,10 +35,13 @@
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
+    "gulp": "^3.9.1",
+    "gulp-modernizr": "^1.0.0-alpha",
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
     "postcss-loader": "^0.9.1",
+    "pug": "^2.0.0-beta6",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.0.1",
@@ -51,6 +55,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
+    "normalize.css": "^5.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "webfontloader": "^1.6.24"

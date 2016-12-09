@@ -4,6 +4,6 @@
 !.babelrc
 
 /node_modules/
-/public/**/*build*
+/dist/*
 
 npm-debug.log
