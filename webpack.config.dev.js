@@ -46,7 +46,6 @@ module.exports = {
         test: /\.scss$/,
         loader: 'style-loader!css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]-[local]-[hash]!postcss-loader!sass-loader'
       }
-      }
     ]
   },
   
