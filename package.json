@@ -9,7 +9,7 @@
     "gulp": "gulp",
     "extract": "NODE_ENV=extract babel-node build.js",
     "build": "BROWSERSLIST_CONFIG=./browserslist npm run destroy && npm run webpack && npm run extract && npm run gulp",
-    "destroy": "trash ./dist/*",
+    "destroy": "trash ./dist/*build*",
     "lint": "eslint ./src"
   },
   "license": "MIT",
