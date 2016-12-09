@@ -16,7 +16,7 @@ gulp.task('modernizr', function() {
         comments: saveLicense
       }
     }))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/build'))
 });
 
 gulp.task('critical', function () {
@@ -25,7 +25,7 @@ gulp.task('critical', function () {
       base: './',
       inline: true,
       css: [
-        'dist/app-build.css'
+        'dist/build/app-build.css'
       ]
     }))
     .pipe(gulp.dest('dist'));

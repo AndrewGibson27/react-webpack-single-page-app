@@ -7,6 +7,7 @@ var pug = require('pug');
 var app = express();
 var compiler = webpack(config);
 
+app.locals.env = app.settings.env;
 app.use(express.static('dist'));
 app.use(require('webpack-hot-middleware')(compiler));
 app.set('view engine', 'pug');

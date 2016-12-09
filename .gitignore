@@ -5,6 +5,6 @@
 
 /node_modules/
 /dist/index.html
-/dist/*build*
+/dist/build
 
 npm-debug.log
