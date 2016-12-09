@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "npm run destroy && NODE_ENV=development npm run start",
-    "build": "BROWSERSLIST_CONFIG=./browserslist npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js && gulp",
+    "build": "BROWSERSLIST_CONFIG=./browserslist npm run destroy && NODE_ENV=production webpack --config webpack.config.prod.js && gulp",
     "destroy": "trash ./dist/*",
     "lint": "eslint ./src"
   },
