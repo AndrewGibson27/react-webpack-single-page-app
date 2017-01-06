@@ -22,10 +22,10 @@ gulp.task('modernizr', function() {
 gulp.task('critical', function() {
   return gulp.src('dist/index.html')
     .pipe(critical({
-      base: './',
+      base: './dist',
       inline: true,
       css: [
-        'dist/build/app-build.css'
+        './dist/build/app-build.css'
       ]
     }))
     .pipe(gulp.dest('dist'));
