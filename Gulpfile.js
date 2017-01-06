@@ -24,6 +24,7 @@ gulp.task('critical', function() {
     .pipe(critical({
       base: './dist',
       inline: true,
+      minify: true,
       css: [
         './dist/build/app-build.css'
       ]
