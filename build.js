@@ -1,6 +1,6 @@
 import ReactDOMServer from 'react-dom/server';
 import React from 'react';
-import App from './src/components/app/App';
+import App from './src/components/App';
 import pug from 'pug';
 import fs from 'fs';
 import path from 'path';
