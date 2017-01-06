@@ -19,12 +19,7 @@
       "presets": ["es2015", "react"]
     },
     "extract": {
-      "presets": ["es2015", "react"],
-      "plugins": [
-        ["css-modules-transform", {
-          "extensions": [".css", ".scss"]
-        }]
-      ]
+      "presets": ["es2015", "react"]
     }
   }
 }

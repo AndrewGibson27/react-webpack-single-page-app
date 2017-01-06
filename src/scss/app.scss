@@ -11,12 +11,12 @@
 }
 
 .unmounted {
-  composes: paragraph;
+  @extend .paragraph;
   background: yellow;
 }
 
 .mounted {
-  composes: paragraph;
+  @extend .paragraph;
   background: pink;
 }
 

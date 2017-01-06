@@ -44,7 +44,7 @@ module.exports = {
       
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader?modules&-autoprefixer&importLoaders=1&localIdentName=[name]-[local]-[hash]!postcss-loader!sass-loader'
+        loader: 'style-loader!css-loader?-autoprefixer&importLoaders=1!postcss-loader!sass-loader'
       }
     ]
   },

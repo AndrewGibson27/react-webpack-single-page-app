@@ -5,6 +5,7 @@ import App from './components/app/App';
 import getFontsAsync from './fonts';
 
 import 'normalize.css/normalize.css';
+import './scss/app.scss';
 
 render(<App />, document.getElementById('root'));
 getFontsAsync();
