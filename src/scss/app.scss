@@ -1,12 +1,13 @@
 @import 'reusable';
+@import 'sprites';
 
 .paragraph {
   font-size: 28px;
   font-family: Georgia, serif;
-  box-sizing: border-box; /* demonstrates Autoprefixer at work */
+  box-sizing: border-box; // demonstrates Autoprefixer at work
 
   @include breakpoint(desktop) {
-      font-size: 36px; /* demonstrates Sass at work */
+    font-size: 36px; // demonstrates Sass at work
   }
 }
 
@@ -24,8 +25,8 @@
   font-family: Georgia, serif;
   margin-top: 50px;
   
-  :global(.wf-active) & {
-      font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+  .wf-active & {
+    font-family: 'Droid Sans', Arial, Helvetica, sans-serif; // demonstrates WebFontLoader at work
   }
 }
 
@@ -33,4 +34,10 @@
   @include clearfix;
   float: left;
   margin-top: 50px;
+}
+
+.twitter {
+  background: svg-inline(twitter); // demonstrates postcss-inline-svg at work
+  width: 100px;
+  height: 100px;
 }

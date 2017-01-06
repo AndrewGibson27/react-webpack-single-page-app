@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
@@ -50,6 +49,9 @@ module.exports = {
   },
   
   postcss: function(){
-    return [autoprefixer];
+    return [
+      require('autoprefixer'),
+      require('postcss-inline-svg')
+    ];
   }
 };
