@@ -1,4 +1,5 @@
 @import 'reusable';
+@import 'sprites';
 
 .paragraph {
   font-size: 28px;
@@ -6,7 +7,7 @@
   box-sizing: border-box; /* demonstrates Autoprefixer at work */
 
   @include breakpoint(desktop) {
-      font-size: 36px; /* demonstrates Sass at work */
+    font-size: 36px; /* demonstrates Sass at work */
   }
 }
 
@@ -33,4 +34,10 @@
   @include clearfix;
   float: left;
   margin-top: 50px;
+}
+
+.twitter {
+  background: svg-inline(twitter);
+  width: 100px;
+  height: 100px;
 }

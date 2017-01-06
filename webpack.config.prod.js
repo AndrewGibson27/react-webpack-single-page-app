@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-var autoprefixer = require('autoprefixer');
 var saveLicense = require('uglify-save-license');
 
 module.exports = {
@@ -64,6 +63,9 @@ module.exports = {
   },
   
   postcss: function(){
-    return [autoprefixer];
+    return [
+      require('autoprefixer'),
+      require('postcss-inline-svg')
+    ];
   }
 };

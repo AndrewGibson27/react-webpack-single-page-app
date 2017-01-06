@@ -36,6 +36,7 @@ export default class App extends Component {
         <p>Above me is an image that is required in a React component.</p>
         <p className='font_example'>My font is loaded by webfontloader.</p>
         <div className='clearfix'>I am a floated div that uses a clearfix mixin.</div>
+        <div className='twitter'></div>
       </div>
     );
   }
