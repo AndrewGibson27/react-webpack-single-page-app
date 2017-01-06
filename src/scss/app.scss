@@ -5,20 +5,29 @@
   font-size: 28px;
   font-family: Georgia, serif;
   box-sizing: border-box; // demonstrates Autoprefixer at work
+  
+  &--mounted {
+    @extend .paragraph;
+    background: pink;
+  }
+  
+  &--unmounted {
+    @extend .paragraph;
+    background: yellow;
+  }
 
   @include breakpoint(desktop) {
-    font-size: 36px; // demonstrates Sass at work
+    font-size: 36px; // demonstrates Sass mixin at work
   }
 }
 
-.unmounted {
-  @extend .paragraph;
-  background: yellow;
+.image {
+  margin-top: 50px;
 }
 
-.mounted {
-  @extend .paragraph;
-  background: pink;
+.image-caption,
+.twitter-caption {
+  margin-top: 5px;
 }
 
 .font_example {
@@ -30,14 +39,30 @@
   }
 }
 
-.clearfix {
-  @include clearfix;
-  float: left;
+.float {
+  @include clearfix; // demonstrates Sass mixin at work
+  width: 200px;
+  height: 100px;
   margin-top: 50px;
+  
+  &__item {
+    float: left;
+    width: 100px;
+    height: 100%;
+    
+    &:first-child {
+      background: red;
+    }
+    
+    &:last-child {
+      background: green;
+    }
+  }
 }
 
 .twitter {
   background: svg-inline(twitter); // demonstrates postcss-inline-svg at work
   width: 100px;
   height: 100px;
+  margin-top: 50px;
 }
