@@ -6,7 +6,7 @@ export default class App extends Component {
     super(props);
     
     this.state = {
-        mounted: false
+      mounted: false
     };
   }
   
@@ -14,19 +14,19 @@ export default class App extends Component {
     let self = this;
     
     setInterval(function(){
-        self.setState({
-            mounted: true
-        });
+      self.setState({
+        mounted: true
+      });
     }, 2000);
   }
 
   render() {
-    let class_name = '';
+    let class_name;
     
     if (!this.state.mounted) {
-        class_name = 'unmounted';
+      class_name = 'unmounted';
     } else {
-        class_name = 'mounted';
+      class_name = 'mounted';
     }
   
     return (
