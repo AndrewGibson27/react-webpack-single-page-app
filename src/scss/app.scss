@@ -40,7 +40,7 @@
 }
 
 .float {
-  @include clearfix; // demonstrates Sass mixin at work
+  @extend .clearfix; // demonstrates Sass mixin at work
   width: 200px;
   height: 100px;
   margin-top: 50px;

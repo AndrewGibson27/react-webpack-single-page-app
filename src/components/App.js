@@ -36,7 +36,7 @@ export default class App extends Component {
         <p className='image-caption'>Above me is an image that is rendered server side, then client side, along with the rest of the content.</p>
         <p className='font_example'>My font is loaded by WebFontLoader.</p>
         <div className='float'>
-          <div className='float__item'>Demonstrates Sass @clearfix mixin, just for fun.</div>
+          <div className='float__item'>Demonstrates Sass clearfix extension, just for fun.</div>
           <div className='float__item'></div>
         </div>
         <div className='twitter'></div>

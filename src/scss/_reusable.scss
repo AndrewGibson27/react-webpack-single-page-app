@@ -73,7 +73,7 @@
 }
 
 /* http://blog.teamtreehouse.com/a-better-clearfix-with-sass */
-@mixin clearfix {
+.clearfix {
   &:after {
     content: '';
     display: table;
