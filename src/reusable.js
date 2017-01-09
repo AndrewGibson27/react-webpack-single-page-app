@@ -1,4 +1,4 @@
-//https://davidwalsh.name/essential-javascript-functions
+/*! https://davidwalsh.name/essential-javascript-functions */
 export const getAbsoluteUrl = (function(){
 	var a;
 
@@ -10,7 +10,7 @@ export const getAbsoluteUrl = (function(){
 	};
 })();
 
-//https://davidwalsh.name/essential-javascript-functions
+/*! https://davidwalsh.name/essential-javascript-functions */
 export function once(context) {
   let result;
 
@@ -24,7 +24,7 @@ export function once(context) {
 	};
 }
 
-//https://davidwalsh.name/essential-javascript-functions
+/*! https://davidwalsh.name/essential-javascript-functions */
 export function poll(fn, callback, errback, timeout, interval) {
   var endTime = Number(new Date()) + (timeout || 2000);
   interval = interval || 100;
@@ -40,7 +40,7 @@ export function poll(fn, callback, errback, timeout, interval) {
   })();
 }
 
-//http://stackoverflow.com/questions/24004791/can-someone-explain-the-debounce-function-in-javascript
+/*! http://stackoverflow.com/questions/24004791/can-someone-explain-the-debounce-function-in-javascript */
 export function debounce(func, wait, immediate) {
   let timeout;           
 
