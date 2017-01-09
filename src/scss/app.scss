@@ -1,8 +1,9 @@
 @import 'reusable';
 @import 'sprites';
+@import 'responsive';
 
 .paragraph {
-  font-size: 28px;
+  font-size: 16px;
   font-family: Georgia, serif;
   box-sizing: border-box; // demonstrates Autoprefixer at work
   
@@ -16,8 +17,8 @@
     background: yellow;
   }
 
-  @include breakpoint(desktop) {
-    font-size: 36px; // demonstrates Sass mixin at work
+  @include mq($from: tablet) {
+    font-size: 24px;
   }
 }
 

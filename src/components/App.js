@@ -31,7 +31,7 @@ export default class App extends Component {
   
     return (
       <div>
-        <p className={class_name}>Hello world. My color change is controlled by React, and my media query size change is controlled by a Sass mixin.</p>
+        <p className={class_name}>Hello world. My color change is controlled by React, and my font size change is controlled by sass-mq.</p>
         <img className='image' src='img/placeholder.png' />
         <p className='image-caption'>Above me is an image that is rendered server side, then client side, along with the rest of the content.</p>
         <p className='font_example'>My font is loaded by WebFontLoader.</p>
