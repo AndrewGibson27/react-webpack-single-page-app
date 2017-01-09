@@ -11,7 +11,7 @@ export default class App extends Component {
   }
   
   componentDidMount() {
-    let self = this;
+    const self = this;
     
     setInterval(function(){
       self.setState({
@@ -31,12 +31,12 @@ export default class App extends Component {
   
     return (
       <div>
-        <p className={class_name}>Hello world. My color change is controlled by CSS modules, and my media query size change is controlled by a Sass mixin.</p>
+        <p className={class_name}>Hello world. My color change is controlled by React, and my media query size change is controlled by a Sass mixin.</p>
         <img className='image' src='img/placeholder.png' />
-        <p className='image-caption'>Above me is an image that is required in a React component.</p>
-        <p className='font_example'>My font is loaded by webfontloader.</p>
+        <p className='image-caption'>Above me is an image that is rendered server side, then client side, along with the rest of the content.</p>
+        <p className='font_example'>My font is loaded by WebFontLoader.</p>
         <div className='float'>
-          <div className='float__item'>Demonstrates @clearfix mixin</div>
+          <div className='float__item'>Demonstrates Sass @clearfix mixin, just for fun.</div>
           <div className='float__item'></div>
         </div>
         <div className='twitter'></div>
