@@ -12,10 +12,10 @@ export const getAbsoluteUrl = (function(){
 
 /*! https://davidwalsh.name/essential-javascript-functions */
 export function once(context) {
-  let result;
+	let result;
 
-	return function() { 
-		if(fn) {
+	return function() {
+		if (fn) {
 			result = fn.apply(context || this, arguments);
 			fn = null;
 		}
@@ -31,35 +31,36 @@ export function poll(fn, callback, errback, timeout, interval) {
 
   (function p() {
     if(fn()) {
-        callback();
+			callback();
     } else if (Number(new Date()) < endTime) {
-        setTimeout(p, interval);
+			setTimeout(p, interval);
     } else {
-        errback(new Error('timed out for ' + fn + ': ' + arguments));
+			errback(new Error('timed out for ' + fn + ': ' + arguments));
     }
   })();
 }
 
 /*! http://stackoverflow.com/questions/24004791/can-someone-explain-the-debounce-function-in-javascript */
 export function debounce(func, wait, immediate) {
-  let timeout;           
+  let timeout;
 
   return function() {
-      const context = this; 
-      const args = arguments;
+    const context = this;
+    const args = arguments;
+    const call_now = immediate && !timeout;
 
-      const call_now = immediate && !timeout;
+    clearTimeout(timeout);
 
-      clearTimeout(timeout);   
+    timeout = setTimeout(function(){
+			timeout = null;
 
-      timeout = setTimeout(function(){
-           timeout = null;
+      if (!immediate) {
+      	func.apply(context, args);
+      }
+    }, wait);
 
-           if (!immediate) {
-             func.apply(context, args);
-           }
-      }, wait);
-
-      if (call_now) func.apply(context, args);  
+    if (call_now) {
+			func.apply(context, args);
+		}
    };
 }
