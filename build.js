@@ -5,7 +5,7 @@ import pug from 'pug';
 import fs from 'fs';
 import path from 'path';
 
-const content = ReactDOMServer.renderToString(<App/>);
+const content = ReactDOMServer.renderToString(<App />);
 const compiler = pug.compileFile('./views/index.pug');
 
 const markup = compiler({
