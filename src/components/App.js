@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       mounted: false
     };
   }
-  
+
   componentDidMount() {
     const self = this;
-    
+
     setInterval(function(){
       self.setState({
         mounted: true
@@ -22,13 +22,13 @@ export default class App extends Component {
 
   render() {
     let class_name;
-    
+
     if (!this.state.mounted) {
       class_name = 'paragraph--unmounted';
     } else {
       class_name = 'paragraph--mounted';
     }
-  
+
     return (
       <div>
         <p className={class_name}>Hello world. My color change is controlled by React, and my font size change is controlled by sass-mq.</p>
@@ -41,6 +41,8 @@ export default class App extends Component {
         </div>
         <div className='twitter'></div>
         <p className='twitter-caption'>Above me is a sprite image handled by PostCSS</p>
+        <div className='bg-image'></div>
+        <p className='bg-image-caption'></p>
       </div>
     );
   }

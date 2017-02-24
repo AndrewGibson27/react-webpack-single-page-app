@@ -6,13 +6,13 @@ var saveLicense = require('uglify-save-license');
 
 module.exports = {
   entry: './src/index',
-  
+
   output: {
     path: path.join(__dirname, 'dist', 'build'),
     filename: 'bundle-build.js?[hash]',
     publicPath: './'
   },
-  
+
   plugins: [
     new ExtractTextPlugin('app-build.css?[hash]'),
     new OptimizeCssAssetsPlugin({
@@ -25,7 +25,7 @@ module.exports = {
       compressor: {
           warnings: false
       },
-    
+
       output: {
           comments: saveLicense
       }
@@ -40,7 +40,7 @@ module.exports = {
       'root.jQuery': 'jquery'
     })
   ],
-  
+
   module: {
     loaders: [
       {
@@ -48,20 +48,25 @@ module.exports = {
         loaders: ['babel'],
         include: path.join(__dirname, 'src')
       },
-    
+
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
         exclude: path.join(__dirname, 'src')
       },
-    
+
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer&importLoaders=1!postcss-loader!sass-loader')
-      }
+      },
+
+      {
+				test: /\.(png|jpg|gif)$/,
+				loader: 'file-loader?name=[name].[ext]?[hash]'
+			}
     ]
   },
-  
+
   postcss: function(){
     return [
       require('autoprefixer'),

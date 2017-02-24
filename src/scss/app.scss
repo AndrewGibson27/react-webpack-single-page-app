@@ -6,12 +6,12 @@
   font-size: 16px;
   font-family: Georgia, serif;
   box-sizing: border-box; // demonstrates Autoprefixer at work
-  
+
   &--mounted {
     @extend .paragraph;
     background: pink;
   }
-  
+
   &--unmounted {
     @extend .paragraph;
     background: yellow;
@@ -27,14 +27,15 @@
 }
 
 .image-caption,
-.twitter-caption {
+.twitter-caption,
+.bg-image-caption {
   margin-top: 5px;
 }
 
 .font_example {
   font-family: Georgia, serif;
   margin-top: 50px;
-  
+
   .wf-active & {
     font-family: 'Droid Sans', Arial, Helvetica, sans-serif; // demonstrates WebFontLoader at work
   }
@@ -45,16 +46,16 @@
   width: 200px;
   height: 100px;
   margin-top: 50px;
-  
+
   &__item {
     float: left;
     width: 100px;
     height: 100%;
-    
+
     &:first-child {
       background: red;
     }
-    
+
     &:last-child {
       background: green;
     }
@@ -66,4 +67,14 @@
   width: 100px;
   height: 100px;
   margin-top: 50px;
+}
+
+.bg-image {
+  background-image: url(../bg/placeholder.png);
+  width: 350px;
+  height: 150px;
+}
+
+.bg-image-caption {
+
 }

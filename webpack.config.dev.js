@@ -44,7 +44,12 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader?-autoprefixer&importLoaders=1!postcss-loader!sass-loader'
-      }
+      },
+
+      {
+				test: /\.(png|jpg|gif)$/,
+				loader: 'file-loader'
+			}
     ]
   },
 
