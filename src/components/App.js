@@ -23,10 +23,10 @@ export default class App extends Component {
   render() {
     let class_name;
 
-    if (!this.state.mounted) {
-      class_name = 'paragraph--unmounted';
-    } else {
+    if (this.state.mounted) {
       class_name = 'paragraph--mounted';
+    } else {
+      class_name = 'paragraph--unmounted';
     }
 
     return (
