@@ -1,70 +1,70 @@
 /*! https://davidwalsh.name/essential-javascript-functions */
 export const getAbsoluteUrl = (function() {
-	let a;
+  let a;
 
-	return function(url) {
-		if (!a) {
-			a = document.createElement('a');
-		}
+  return function(url) {
+    if (!a) {
+      a = document.createElement('a');
+    }
 
-		a.href = url;
+    a.href = url;
 
-		return a.href;
-	};
+    return a.href;
+  };
 })();
 
 /*! https://davidwalsh.name/essential-javascript-functions */
 export function once(context) {
-	let result;
+  let result;
 
-	return function() {
-		if (fn) {
-			result = fn.apply(context || this, arguments);
-			fn = null;
-		}
+  return function() {
+    if (fn) {
+      result = fn.apply(context || this, arguments);
+      fn = null;
+    }
 
-		return result;
-	};
+    return result;
+  };
 }
 
 /*! https://davidwalsh.name/essential-javascript-functions */
 export function poll(fn, callback, errback, timeout, interval) {
-	const endTime = Number(new Date()) + (timeout || 2000);
+  const endTime = Number(new Date()) + (timeout || 2000);
 
-	interval = interval || 100;
+  interval = interval || 100;
 
-	(function p() {
-		if (fn()) {
-			callback();
-		} else if (Number(new Date()) < endTime) {
-			setTimeout(p, interval);
-		} else {
-			errback(new Error('timed out for ' + fn + ': ' + arguments));
-		}
-	})();
+  (function p() {
+    if (fn()) {
+      callback();
+    } else if (Number(new Date()) < endTime) {
+      setTimeout(p, interval);
+    } else {
+      errback(new Error('timed out for ' + fn + ': ' + arguments));
+    }
+  })();
 }
 
 /*! http://stackoverflow.com/questions/24004791/can-someone-explain-the-debounce-function-in-javascript */
 export function debounce(func, wait, immediate) {
-	let timeout;
+  let timeout;
 
-	return function() {
-		const context = this;
-		const args = arguments;
-		const callNow = immediate && !timeout;
+  return function() {
+    const context = this;
+    const args = arguments;
+    const callNow = immediate && !timeout;
 
-		clearTimeout(timeout);
+    clearTimeout(timeout);
 
-		timeout = setTimeout(function() {
-			timeout = null;
+    timeout = setTimeout(function() {
+      timeout = null;
 
-			if (!immediate) {
-				func.apply(context, args);
-			}
-		}, wait);
+      if (!immediate) {
+        func.apply(context, args);
+      }
+    }, wait);
 
-		if (callNow) {
-			func.apply(context, args);
-		}
-	};
+    if (callNow) {
+      func.apply(context, args);
+    }
+  };
 }
