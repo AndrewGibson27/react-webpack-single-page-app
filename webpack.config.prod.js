@@ -69,7 +69,11 @@ module.exports = {
 
   postcss: function(){
     return [
-      require('autoprefixer'),
+      require('autoprefixer')({
+        browsers: [
+          'last 2 versions'
+        ]
+      }),
       require('postcss-inline-svg')
     ];
   }
